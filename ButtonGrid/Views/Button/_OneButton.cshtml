@@ -10,8 +10,7 @@
     string[] imageNames = { "blue-button.png", "green-button.png", "purple-button.png", "red-button.png" };
 }
 
-<button class="game-button" type="submit" value="@Model.Id"
-        name="buttonNumber" asp-controller="Button" asp-action="HandleButtonClick">
+<button class="game-button" type="button" value="@Model.Id" data-id="@Model.Id">
     <img class="game-button" src="~/images/@imageNames[@Model.ButtonState]" />
     @*button label*@
     <div class="button-label">

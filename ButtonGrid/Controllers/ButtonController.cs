@@ -39,7 +39,11 @@ namespace ButtonGrid.Controllers
             }
             return PartialView("_OneButton", buttons[buttonValue]);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="buttonId"></param>
+        /// <returns></returns>
         public IActionResult GetRightClickModal(string buttonId)
         {
             int.TryParse(buttonId, out int buttonVal);

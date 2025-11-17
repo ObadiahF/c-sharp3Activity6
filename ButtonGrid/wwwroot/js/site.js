@@ -9,9 +9,10 @@
 $(document).on("click", ".game-button", function (event) {
     // Prevent the default action of the click
     event.preventDefault();
+
     // Get the button and button ID
     const button = $(this);
-    const buttonValue = button.val();
+    const buttonValue = button.val();;
     //// Show the user that the click handling is being done using AJAX
     //alert("The button click event is being handled by AJAX instead of the form submit. You clicked item " + buttonValue + ".");
 
@@ -19,7 +20,7 @@ $(document).on("click", ".game-button", function (event) {
         // Specify the type of request
         type: "POST",
         // Specify the URL to handle the request
-        url: "Button/HandlePartialPageButtonClick",
+        url: "/Button/HandlePartialPageButtonClick",
         // Specify the data to send
         data: {
             // Send the value of the clicked button
@@ -27,6 +28,7 @@ $(document).on("click", ".game-button", function (event) {
         },
         // Specify what to do when the request returns data
         success: function (partialPageHtml) {
+            alert(partialPageHtml)
             button.replaceWith(partialPageHtml);
         },
          error: function(jqXHR, textStatus, errorThrown) {
@@ -41,7 +43,7 @@ $(document).ready(() => {
     $(document).on("contextmenu", ".game-button", function (e) {
         e.preventDefault();
 
-        const buttonId = $(this).data("id");e
+        const buttonId = $(this).data("id");
 
         $.ajax({
             type: "GET",
