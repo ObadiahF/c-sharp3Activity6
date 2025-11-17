@@ -31,13 +31,13 @@ namespace ButtonGrid.Controllers
         /// </summary>
         /// <param name="buttonNumber"></param>
         /// <returns></returns>
-        public IActionResult HandleButtonClick(string buttonNumber)
+        public IActionResult HandlePartialPageButtonClick(string buttonNumber)
         {
             if (int.TryParse(buttonNumber, out int buttonValue))
             {
                 buttons.ElementAt(buttonValue).ButtonState = (buttons.ElementAt(buttonValue).ButtonState + 1) % 4;
             }
-            return View("Index", buttons);
+            return PartialView("_OneButton", buttons[buttonValue]);
         }
 
         public IActionResult GetRightClickModal(string buttonId)
