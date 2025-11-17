@@ -1,0 +1,20 @@
+﻿<!--
+    /*
+    * Obadiah Fusco
+    * Button Grid
+    * CST-350
+    * 11/14/25
+    */
+-->
+@{
+    string[] imageNames = { "blue-button.png", "green-button.png", "purple-button.png", "red-button.png" };
+}
+
+<button class="game-button" type="submit" value="@Model.Id"
+        name="buttonNumber" asp-controller="Button" asp-action="HandleButtonClick">
+    <img class="game-button" src="~/images/@imageNames[@Model.ButtonState]" />
+    @*button label*@
+    <div class="button-label">
+        @Model.Id, @Model.ButtonState
+    </div>
+</button>

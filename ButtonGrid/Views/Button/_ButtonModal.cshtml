@@ -1,0 +1,30 @@
+﻿<!--
+    /*
+    * Obadiah Fusco
+    * Button Grid
+    * CST-350
+    * 11/14/25
+    */
+-->
+@*
+    Tell the view the shape of the data
+*@
+@model ButtonGrid.Models.ButtonModel
+
+<div class="modal" tabindex="-1" id="button-info-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"@Model.Id</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Id: @Model.Id</p>
+                <p>State: @Model.ButtonState</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
